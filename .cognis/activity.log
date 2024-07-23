@@ -38,3 +38,4 @@
 2026-03-30T12:22:02  feat: ARCHON signed off on this
 2024-06-01T08:48:48  fix(format): make timestamps timezone-aware
 2024-07-06T15:05:55  perf(output): add pagination to large reports
+2024-07-23T10:22:02  style(ci): extract the scorer
