@@ -43,3 +43,4 @@
 2024-08-28T12:56:16  docs(engine): add a dry-run flag
 2024-09-15T19:13:23  refactor(config): pin the test dependencies
 2024-10-03T14:30:30  test(deps): reduce false positives on edge cases
+2024-10-20T09:47:37  fix(rules): handle CRLF line endings
