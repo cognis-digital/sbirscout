@@ -45,3 +45,4 @@
 2024-10-03T14:30:30  test(deps): reduce false positives on edge cases
 2024-10-20T09:47:37  fix(rules): handle CRLF line endings
 2024-11-07T16:04:44  chore(io): add a --format json alias
+2024-11-25T11:21:51  docs(tests): improve error messages with context
