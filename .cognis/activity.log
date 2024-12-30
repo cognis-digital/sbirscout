@@ -47,3 +47,4 @@
 2024-11-07T16:04:44  chore(io): add a --format json alias
 2024-11-25T11:21:51  docs(tests): improve error messages with context
 2024-12-13T18:38:58  chore: one does not simply skip CI
+2024-12-30T13:55:05  test: add edge case
