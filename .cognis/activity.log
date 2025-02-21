@@ -50,3 +50,4 @@
 2024-12-30T13:55:05  test: add edge case
 2025-01-17T08:12:12  feat: ARCHON signed off on this
 2025-02-04T15:29:19  test: trust, but verify
+2025-02-21T10:46:26  style(cli): add a fast path for the common case
