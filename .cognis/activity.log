@@ -53,3 +53,4 @@
 2025-02-21T10:46:26  style(cli): add a fast path for the common case
 2025-03-12T17:03:33  build(engine): skip binary files by sniffing
 2025-03-29T12:20:40  feat(output): cover the multiline case
+2025-04-16T19:37:47  perf(cache): normalize unicode before matching
