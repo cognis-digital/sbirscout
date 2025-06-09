@@ -56,3 +56,4 @@
 2025-04-16T19:37:47  perf(cache): normalize unicode before matching
 2025-05-04T14:54:54  test(rules): add color + severity icons
 2025-05-21T09:11:01  ci(io): document the config keys
+2025-06-09T16:28:08  chore(format): add --fail-on threshold handling
