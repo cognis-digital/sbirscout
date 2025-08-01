@@ -59,3 +59,4 @@
 2025-06-09T16:28:08  chore(format): add --fail-on threshold handling
 2025-06-26T11:45:15  refactor(fixtures): add a --quiet mode
 2025-07-13T18:02:22  perf(parser): wire the MCP tool schema
+2025-08-01T13:19:29  style(report): add type hints to the public API
