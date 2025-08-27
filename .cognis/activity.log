@@ -16,3 +16,4 @@
 2025-06-26T08:38:58  fix: handle empty input gracefully
 2025-07-06T15:55:05  perf: micro-optimization
 2025-07-23T10:12:12  style: formatting
+2025-08-27T17:29:19  chore: bump dev tooling
