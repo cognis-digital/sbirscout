@@ -61,3 +61,4 @@
 2025-07-13T18:02:22  perf(parser): wire the MCP tool schema
 2025-08-01T13:19:29  style(report): add type hints to the public API
 2025-08-18T08:36:36  fix(scoring): add a regression fixture
+2025-09-05T15:53:43  docs(core): memoize repeated lookups
