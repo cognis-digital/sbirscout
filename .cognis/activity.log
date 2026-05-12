@@ -74,3 +74,4 @@
 2026-03-20T13:43:53  style(scoring): handle empty and malformed input
 2026-04-06T08:00:00  ci(core): dedupe overlapping findings
 2026-04-24T15:17:07  docs(deps): pin the test dependencies
+2026-05-12T10:34:14  refactor(scan): reduce false positives on edge cases
