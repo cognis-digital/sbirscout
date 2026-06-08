@@ -1,0 +1,69 @@
+{
+  "topics": [
+    {
+      "topic_id": "AF252-D015",
+      "title": "Edge ML for Autonomous UAS Target Recognition",
+      "agency": "Air Force",
+      "source": "dsip",
+      "program": "SBIR",
+      "phase": "DIRECT_II",
+      "keywords": ["edge ml", "autonomous systems", "uas", "computer vision"],
+      "description": "Develop on-board edge ML inference for autonomous systems performing UAS target recognition in contested RF environments.",
+      "award_ceiling": 1800000,
+      "close_date": "2026-06-25",
+      "url": "https://www.dodsbirsttr.mil/topics/AF252-D015"
+    },
+    {
+      "topic_id": "N252-008",
+      "title": "RF Sensing for Maritime Domain Awareness",
+      "agency": "Navy",
+      "source": "dsip",
+      "program": "SBIR",
+      "phase": "I",
+      "keywords": ["rf sensing", "signals", "maritime"],
+      "description": "Passive RF sensing payloads for wide-area maritime domain awareness.",
+      "award_ceiling": 250000,
+      "close_date": "2026-07-15",
+      "url": "https://www.dodsbirsttr.mil/topics/N252-008"
+    },
+    {
+      "topic_id": "SBIR-2026-EERE-01",
+      "title": "Smart Grid Demand Response Optimization",
+      "agency": "DOE",
+      "source": "sbir_gov",
+      "program": "SBIR",
+      "phase": "I",
+      "keywords": ["grid", "optimization", "energy"],
+      "description": "Software for utility-scale demand response and load forecasting.",
+      "award_ceiling": 200000,
+      "close_date": "2026-09-30",
+      "url": "https://www.sbir.gov/node/EERE-01"
+    },
+    {
+      "topic_id": "PA-26-101",
+      "title": "AI-Assisted Remote Patient Monitoring Devices",
+      "agency": "NIH",
+      "source": "nih",
+      "program": "STTR",
+      "phase": "I",
+      "keywords": ["edge ml", "medical devices", "monitoring"],
+      "description": "Edge ML powered remote patient monitoring with on-device inference.",
+      "award_ceiling": 400000,
+      "close_date": "2026-08-05",
+      "url": "https://grants.nih.gov/PA-26-101"
+    },
+    {
+      "topic_id": "A252-EXP",
+      "title": "Autonomous Ground Resupply Logistics",
+      "agency": "Army",
+      "source": "dsip",
+      "program": "SBIR",
+      "phase": "I",
+      "keywords": ["autonomous systems", "logistics", "ground vehicles"],
+      "description": "Autonomous systems for contested last-mile ground resupply.",
+      "award_ceiling": 150000,
+      "close_date": "2026-05-01",
+      "url": "https://www.dodsbirsttr.mil/topics/A252-EXP"
+    }
+  ]
+}
