@@ -1,0 +1,16 @@
+[
+  {
+    "topic": "USAF-254-A111",
+    "title": "AI red-teaming kit",
+    "capability_match_score": "96",
+    "days_to_close": "2",
+    "agency": "USAF"
+  },
+  {
+    "topic": "USN-255-Z",
+    "title": "AI red-teaming",
+    "capability_match_score": "88",
+    "days_to_close": "1",
+    "agency": "USN"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "topic": "AF254-D001",
+    "title": "AI agent supply-chain security tooling",
+    "capability_match_score": "94",
+    "days_to_close": "21",
+    "agency": "USAF"
+  },
+  {
+    "topic": "N255-A042",
+    "title": "LLM red-teaming framework for naval systems",
+    "capability_match_score": "91",
+    "days_to_close": "38",
+    "agency": "USN"
+  },
+  {
+    "topic": "DHS254-S001",
+    "title": "CISA-aligned vulnerability disclosure tooling",
+    "capability_match_score": "73",
+    "days_to_close": "5",
+    "agency": "DHS"
+  }
+]

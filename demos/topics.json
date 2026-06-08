@@ -1,0 +1,12 @@
+[
+  {
+    "topic": "AF254-001",
+    "capability_match_score": "87",
+    "days_to_close": "21"
+  },
+  {
+    "topic": "N255-A042",
+    "capability_match_score": "64",
+    "days_to_close": "5"
+  }
+]
