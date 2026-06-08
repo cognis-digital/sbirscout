@@ -36,7 +36,12 @@ SBIR/STTR topic discovery — DSIP + SBIR.gov + NIH digest with bid scoring — 
 <a name="features"></a>
 ## Features
 
-- ✅ Scan
+- ✅ Normalize Source
+- ✅ Score Topic
+- ✅ Score Topics
+- ✅ Parse Topics
+- ✅ Load Topics
+- ✅ Digest
 - ✅ Runs on Linux/macOS/Windows · Docker · devcontainer
 - ✅ Ports in Python, JavaScript, Go, and Rust (`ports/`)
 
