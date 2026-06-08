@@ -1,39 +1,11 @@
-"""SBIRSCOUT - SBIR/STTR topic discovery with bid scoring.
-
-Aggregates and normalizes SBIR/STTR solicitation topics from multiple
-federal sources (DoD DSIP, SBIR.gov, NIH) into a single digest, then
-ranks them against a firm's capability profile using a transparent,
-explainable bid-fit score.
-
-Standard library only. Zero install. No network required for core scoring.
-"""
-from .core import (
-    Topic,
-    CapabilityProfile,
-    ScoredTopic,
-    load_topics,
-    parse_topics,
-    score_topic,
-    score_topics,
-    digest,
-    normalize_source,
-    SOURCES,
-)
-
-TOOL_NAME = "sbirscout"
-TOOL_VERSION = "1.0.0"
-
-__all__ = [
-    "Topic",
-    "CapabilityProfile",
-    "ScoredTopic",
-    "load_topics",
-    "parse_topics",
-    "score_topic",
-    "score_topics",
-    "digest",
-    "normalize_source",
-    "SOURCES",
-    "TOOL_NAME",
-    "TOOL_VERSION",
-]
+"""sbirscout — part of the Cognis Neural Suite."""
+try:  # re-export the tool's public API + identity from core
+    from sbirscout.core import *  # noqa: F401,F403
+except Exception:  # pragma: no cover
+    pass
+try:
+    from sbirscout.core import TOOL_NAME, TOOL_VERSION
+except Exception:  # pragma: no cover
+    TOOL_NAME = "sbirscout"
+    TOOL_VERSION = "0.1.0"
+__version__ = TOOL_VERSION
