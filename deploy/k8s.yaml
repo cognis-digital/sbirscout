@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: sbirscout, labels: { app: sbirscout } }
+spec:
+  replicas: 1
+  selector: { matchLabels: { app: sbirscout } }
+  template:
+    metadata: { labels: { app: sbirscout } }
+    spec:
+      containers:
+        - name: sbirscout
+          image: ghcr.io/cognis-digital/sbirscout:latest
+          ports: [{ containerPort: 8000 }]
+          resources:
+            requests: { cpu: "50m", memory: "64Mi" }
+            limits: { cpu: "500m", memory: "256Mi" }
+---
+apiVersion: v1
+kind: Service
+metadata: { name: sbirscout }
+spec:
+  selector: { app: sbirscout }
+  ports: [{ port: 80, targetPort: 8000 }]
