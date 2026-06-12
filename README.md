@@ -16,7 +16,7 @@
 </div>
 
 ```bash
-pip install cognis-sbirscout
+pip install "git+https://github.com/cognis-digital/sbirscout.git"
 sbirscout scan .            # → prioritized findings in seconds
 ```
 
@@ -51,7 +51,7 @@ SBIR/STTR topic discovery — DSIP + SBIR.gov + NIH digest with bid scoring — 
 ## Quick start
 
 ```bash
-pip install cognis-sbirscout
+pip install "git+https://github.com/cognis-digital/sbirscout.git"
 sbirscout --version
 sbirscout scan .                       # scan current project
 sbirscout scan . --format json         # machine-readable
