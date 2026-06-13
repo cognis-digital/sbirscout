@@ -20,6 +20,12 @@ pip install "git+https://github.com/cognis-digital/sbirscout.git"
 sbirscout scan .            # → prioritized findings in seconds
 ```
 
+<!-- cognis:layman:start -->
+## What is this?
+
+SBIRSCOUT helps small businesses and startups find and evaluate federal grant opportunities from programs like DoD SBIR, STTR, and NIH. You give it a list of open solicitation topics and tell it what your company does, and it scores each opportunity on how well it fits your capabilities, preferred funding phase, and timeline. The result is a ranked list with a clear GO, CONSIDER, or PASS recommendation for each topic, so you spend your proposal-writing time on the opportunities most likely to lead to a contract.
+<!-- cognis:layman:end -->
+
 ## Contents
 
 - [Why sbirscout?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
@@ -48,6 +54,42 @@ SBIR/STTR topic discovery — DSIP + SBIR.gov + NIH digest with bid scoring — 
 <div align="right"><a href="#top">↑ back to top</a></div>
 
 <a name="quick-start"></a>
+<!-- cognis:install:start -->
+## Install
+
+`sbirscout` is source-available (not published to PyPI) — every method below installs
+straight from GitHub. Pick whichever you prefer; the one-line scripts auto-detect
+the best tool available on your machine.
+
+**One-liner (Linux / macOS):**
+```sh
+curl -fsSL https://raw.githubusercontent.com/cognis-digital/sbirscout/HEAD/install.sh | sh
+```
+
+**One-liner (Windows PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/cognis-digital/sbirscout/HEAD/install.ps1 | iex
+```
+
+**Or install manually — any one of:**
+```sh
+pipx install "git+https://github.com/cognis-digital/sbirscout.git"     # isolated (recommended)
+uv tool install "git+https://github.com/cognis-digital/sbirscout.git"  # uv
+pip install "git+https://github.com/cognis-digital/sbirscout.git"      # pip
+```
+
+**From source:**
+```sh
+git clone https://github.com/cognis-digital/sbirscout.git
+cd sbirscout && pip install .
+```
+
+Then run:
+```sh
+sbirscout --help
+```
+<!-- cognis:install:end -->
+
 ## Quick start
 
 ```bash
