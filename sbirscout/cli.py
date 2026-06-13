@@ -9,7 +9,6 @@ from typing import List, Optional, Sequence
 
 from . import TOOL_NAME, TOOL_VERSION
 from .core import (
-    ScoredTopic,
     SOURCES,
     _profile_from_raw,
     digest,

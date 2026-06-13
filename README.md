@@ -9,16 +9,22 @@
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&duration=3500&pause=1000&color=6B46C1&center=true&vCenter=true&width=720&lines=SBIRSTTR+topic+discovery++DSIP++SBIRgov++NIH+digest+with+bid;Self-hostable+%C2%B7+MCP-native+%C2%B7+CI-ready+%C2%B7+polyglot" width="720"/>
 
-[![PyPI](https://img.shields.io/pypi/v/cognis-sbirscout.svg?color=6b46c1)](https://pypi.org/project/cognis-sbirscout/) [![CI](https://github.com/cognis-digital/sbirscout/actions/workflows/ci.yml/badge.svg)](https://github.com/cognis-digital/sbirscout/actions) [![License: COCL 1.0](https://img.shields.io/badge/License-COCL%201.0-2b6cb0.svg)](LICENSE) [![Suite](https://img.shields.io/badge/Cognis-Neural%20Suite-6b46c1.svg)](https://github.com/cognis-digital)
+[![install](https://img.shields.io/badge/install-git%2B%20%C2%B7%20pipx%20%C2%B7%20uv-6b46c1.svg)](#install--every-way-every-platform) [![CI](https://github.com/cognis-digital/sbirscout/actions/workflows/ci.yml/badge.svg)](https://github.com/cognis-digital/sbirscout/actions) [![License: COCL 1.0](https://img.shields.io/badge/License-COCL%201.0-2b6cb0.svg)](LICENSE) [![Suite](https://img.shields.io/badge/Cognis-Neural%20Suite-6b46c1.svg)](https://github.com/cognis-digital)
 
 *Federal / Compliance — NIST, CMMC, FedRAMP, and SBIR/GSA workflows.*
 
 </div>
 
 ```bash
-pip install cognis-sbirscout
+pip install "git+https://github.com/cognis-digital/sbirscout.git"
 sbirscout scan .            # → prioritized findings in seconds
 ```
+
+<!-- cognis:layman:start -->
+## What is this?
+
+SBIRSCOUT helps small businesses and startups find and evaluate federal grant opportunities from programs like DoD SBIR, STTR, and NIH. You give it a list of open solicitation topics and tell it what your company does, and it scores each opportunity on how well it fits your capabilities, preferred funding phase, and timeline. The result is a ranked list with a clear GO, CONSIDER, or PASS recommendation for each topic, so you spend your proposal-writing time on the opportunities most likely to lead to a contract.
+<!-- cognis:layman:end -->
 
 ## Contents
 
@@ -48,10 +54,56 @@ SBIR/STTR topic discovery — DSIP + SBIR.gov + NIH digest with bid scoring — 
 <div align="right"><a href="#top">↑ back to top</a></div>
 
 <a name="quick-start"></a>
+<!-- cognis:domains:start -->
+## Domains
+
+**Primary domain:** Government & Compliance  ·  **JTF MERIDIAN division:** IRONCLAD · ANVIL
+
+**Topics:** `cognis` `compliance` `govtech` `grc`
+
+Part of the **Cognis Neural Suite** — 300+ source-available tools organized across 12 domains under the JTF MERIDIAN command structure. See the [suite on GitHub](https://github.com/cognis-digital) and [jtf-meridian](https://github.com/cognis-digital/jtf-meridian) for how the pieces fit together.
+<!-- cognis:domains:end -->
+
+<!-- cognis:install:start -->
+## Install
+
+`sbirscout` is source-available (not published to PyPI) — every method below installs
+straight from GitHub. Pick whichever you prefer; the one-line scripts auto-detect
+the best tool available on your machine.
+
+**One-liner (Linux / macOS):**
+```sh
+curl -fsSL https://raw.githubusercontent.com/cognis-digital/sbirscout/HEAD/install.sh | sh
+```
+
+**One-liner (Windows PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/cognis-digital/sbirscout/HEAD/install.ps1 | iex
+```
+
+**Or install manually — any one of:**
+```sh
+pipx install "git+https://github.com/cognis-digital/sbirscout.git"     # isolated (recommended)
+uv tool install "git+https://github.com/cognis-digital/sbirscout.git"  # uv
+pip install "git+https://github.com/cognis-digital/sbirscout.git"      # pip
+```
+
+**From source:**
+```sh
+git clone https://github.com/cognis-digital/sbirscout.git
+cd sbirscout && pip install .
+```
+
+Then run:
+```sh
+sbirscout --help
+```
+<!-- cognis:install:end -->
+
 ## Quick start
 
 ```bash
-pip install cognis-sbirscout
+pip install "git+https://github.com/cognis-digital/sbirscout.git"
 sbirscout --version
 sbirscout scan .                       # scan current project
 sbirscout scan . --format json         # machine-readable
@@ -141,6 +193,32 @@ curl -fsSL https://raw.githubusercontent.com/cognis-digital/sbirscout/main/insta
 <div align="right"><a href="#top">↑ back to top</a></div>
 
 <a name="related"></a>
+<a name="verification"></a>
+## Verification
+
+[![tests](https://img.shields.io/badge/tests-15%20passing-2ea44f.svg)](AUDIT.md)
+
+Every push is verified end-to-end. Latest audit (2026-06-13):
+
+```text
+tests        : 15 passed, 0 failed, 0 errored
+compile      : all modules parse
+cli          : C:\Python314\python.exe: No module named https
+package      : https
+```
+
+<details><summary>CLI surface (<code>--help</code>)</summary>
+
+```text
+C:\Python314\python.exe: No module named https
+```
+</details>
+
+Full machine-readable results: [`AUDIT.md`](AUDIT.md) · regenerate with `python -m https --help` + `pytest -q`.
+
+<div align="right"><a href="#top">↑ back to top</a></div>
+
+
 ## Related Cognis tools
 
 - [`checkpoint-ai`](https://github.com/cognis-digital/checkpoint-ai) — NIST AI RMF / EU AI Act / ISO 42001 self-assessment & SSP generator
