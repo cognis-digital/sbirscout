@@ -258,15 +258,26 @@ def score_topics(
 def parse_topics(raw: Any) -> List[Topic]:
     """Build Topic objects from parsed JSON (dict with 'topics' or a list)."""
     if isinstance(raw, dict):
-        items = raw.get("topics", [])
+        items = raw.get("topics") or []
+        if not isinstance(items, list):
+            raise ValueError(
+                "'topics' field must be a list, got "
+                + type(items).__name__
+            )
     elif isinstance(raw, list):
         items = raw
+    elif raw is None:
+        raise ValueError("input is null — expected a JSON object with 'topics' or a JSON list")
     else:
         raise ValueError("input must be a JSON object with 'topics' or a JSON list")
     topics: List[Topic] = []
     for i, it in enumerate(items):
         if not isinstance(it, dict):
-            raise ValueError(f"topic #{i} is not an object")
+            raise ValueError(f"topic #{i} is not an object (got {type(it).__name__})")
+        # keywords must be list-like; coerce a bare string to a single-element list
+        kw_raw = it.get("keywords") or []
+        if isinstance(kw_raw, str):
+            kw_raw = [kw_raw]
         topics.append(
             Topic(
                 topic_id=str(it.get("topic_id") or it.get("id") or f"T{i+1}"),
@@ -275,7 +286,7 @@ def parse_topics(raw: Any) -> List[Topic]:
                 source=str(it.get("source") or "sbir_gov"),
                 program=str(it.get("program") or "SBIR"),
                 phase=it.get("phase", "I"),
-                keywords=list(it.get("keywords") or []),
+                keywords=list(kw_raw),
                 description=str(it.get("description") or ""),
                 award_ceiling=it.get("award_ceiling", 0),
                 close_date=it.get("close_date"),
@@ -286,19 +297,43 @@ def parse_topics(raw: Any) -> List[Topic]:
 
 
 def load_topics(path: str) -> List[Topic]:
-    with open(path, "r", encoding="utf-8") as fh:
-        return parse_topics(json.load(fh))
+    """Load and parse topics from a JSON file; raises FileNotFoundError or ValueError."""
+    try:
+        with open(path, "r", encoding="utf-8") as fh:
+            raw = json.load(fh)
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"topics file is not valid JSON: {exc}") from exc
+    return parse_topics(raw)
 
 
 def _profile_from_raw(raw: Any) -> CapabilityProfile:
     if isinstance(raw, dict):
+        min_award_raw = raw.get("min_award") or 0.0
+        try:
+            min_award = float(min_award_raw)
+        except (TypeError, ValueError):
+            raise ValueError(
+                f"profile 'min_award' must be a number, got {min_award_raw!r}"
+            )
+        caps_raw = raw.get("capabilities") or []
+        if not isinstance(caps_raw, list):
+            raise ValueError(
+                f"profile 'capabilities' must be a list, got {type(caps_raw).__name__}"
+            )
+        phases_raw = raw.get("preferred_phases") or ["I"]
+        if not isinstance(phases_raw, list):
+            raise ValueError(
+                f"profile 'preferred_phases' must be a list, got {type(phases_raw).__name__}"
+            )
         return CapabilityProfile(
-            capabilities=list(raw.get("capabilities") or []),
-            preferred_phases=list(raw.get("preferred_phases") or ["I"]),
+            capabilities=caps_raw,
+            preferred_phases=phases_raw,
             has_research_partner=bool(raw.get("has_research_partner", False)),
-            min_award=float(raw.get("min_award") or 0.0),
+            min_award=min_award,
         )
-    return CapabilityProfile(capabilities=list(raw or []))
+    if raw is None:
+        return CapabilityProfile()
+    return CapabilityProfile(capabilities=list(raw))
 
 
 def digest(

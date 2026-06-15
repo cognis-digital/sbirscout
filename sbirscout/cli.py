@@ -19,13 +19,20 @@ from .core import (
 def _parse_date(s: Optional[str]) -> Optional[date]:
     if not s:
         return None
-    return datetime.strptime(s, "%Y-%m-%d").date()
+    try:
+        return datetime.strptime(s, "%Y-%m-%d").date()
+    except ValueError:
+        raise ValueError(f"--today must be YYYY-MM-DD, got: {s!r}")
 
 
 def _build_profile(args: argparse.Namespace):
     if getattr(args, "profile", None):
-        with open(args.profile, "r", encoding="utf-8") as fh:
-            return _profile_from_raw(json.load(fh))
+        try:
+            with open(args.profile, "r", encoding="utf-8") as fh:
+                raw = json.load(fh)
+        except json.JSONDecodeError as exc:
+            raise ValueError(f"profile file is not valid JSON: {exc}") from exc
+        return _profile_from_raw(raw)
     caps = []
     if getattr(args, "capabilities", None):
         caps = [c.strip() for c in args.capabilities.split(",") if c.strip()]
@@ -67,6 +74,9 @@ def _render_table(result: dict) -> str:
 
 
 def _cmd_scout(args: argparse.Namespace) -> int:
+    if args.top is not None and args.top < 1:
+        print("sbirscout: --top must be a positive integer", file=sys.stderr)
+        return 2
     topics = load_topics(args.input)
     if not topics:
         print("sbirscout: no topics found in input", file=sys.stderr)
