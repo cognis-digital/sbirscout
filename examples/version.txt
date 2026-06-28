@@ -1,0 +1,3 @@
+$ sbirscout-emit --version
+
+sbirscout 0.1.0

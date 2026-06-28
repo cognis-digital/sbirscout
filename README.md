@@ -42,6 +42,46 @@ sbirscout scan .            # → prioritized findings in seconds
 
 
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+Real, reproducible output from the tool — runs offline:
+
+```console
+$ sbirscout-emit --version
+sbirscout 0.1.0
+```
+
+```console
+$ sbirscout-emit --help
+usage: sbirscout [-h] [--version] [--format {table,json}] {scout,sources} ...
+
+SBIR/STTR topic discovery and bid scoring (DSIP + SBIR.gov + NIH).
+
+positional arguments:
+  {scout,sources}
+    scout               rank topics from a digest file against a profile
+    sources             list supported normalized sources
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --format {table,json}
+                        output format
+```
+
+```console
+$ sbirscout-emit sources
+dsip       DoD SBIR/STTR (DSIP)
+sbir_gov   SBIR.gov (cross-agency)
+nih        NIH/HHS
+```
+
+> Blocks above are real `sbirscout` output — reproduce them from a clone.
+
+<!-- cognis:example:end -->
+
 ## Contents
 
 

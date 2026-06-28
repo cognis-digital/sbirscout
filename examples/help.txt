@@ -1,0 +1,16 @@
+$ sbirscout-emit --help
+
+usage: sbirscout [-h] [--version] [--format {table,json}] {scout,sources} ...
+
+SBIR/STTR topic discovery and bid scoring (DSIP + SBIR.gov + NIH).
+
+positional arguments:
+  {scout,sources}
+    scout               rank topics from a digest file against a profile
+    sources             list supported normalized sources
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --format {table,json}
+                        output format
